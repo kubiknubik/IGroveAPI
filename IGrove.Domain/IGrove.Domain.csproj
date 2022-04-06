@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Games\Commands\" />
+    <Folder Include="Games\Dtos\" />
+    <Folder Include="Games\Entities\" />
+    <Folder Include="Games\Events\" />
+    <Folder Include="Games\Queries\" />
+    <Folder Include="Players\Events\" />
+    <Folder Include="Tickets\Commands\" />
+    <Folder Include="Tickets\Entities\" />
+    <Folder Include="Tickets\Events\" />
+    <Folder Include="Users\Dtos\" />
+    <Folder Include="Users\Events\" />
+    <Folder Include="Users\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared.Utils\Shared.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

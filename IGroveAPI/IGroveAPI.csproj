@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IGrove.Management\IGrove.Management.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Games\" />
+    <Folder Include="Models\Players\" />
+    <Folder Include="Models\Tickets\" />
+  </ItemGroup>
+
+</Project>
