@@ -7,8 +7,7 @@
   <ItemGroup>
     <Folder Include="Games\CommandHandlers\" />
     <Folder Include="Games\EventHandlers\" />
-    <Folder Include="Games\QueryHandlers\" />
-    <Folder Include="Games\Repositories\" />
+    <Folder Include="Users\" />
     <Folder Include="Players\CommandHandlers\" />
     <Folder Include="Players\EventHandlers\" />
     <Folder Include="Tickets\CommandHandlers\" />

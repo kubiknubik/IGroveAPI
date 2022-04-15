@@ -3,17 +3,17 @@ using Shared.Utils.Queries;
 
 namespace IGrove.Domain.Players.Queries
 {
-    public class GetPlayerByIdQuery : BaseQuery<PlayerDto>
+    public class GetPlayerByIdQuery : QueryBase<PlayerDto>
     {
         public int Id { get; set; }
     }
 
-    public class GetPlayerByUsernameQuery : BaseQuery<PlayerDto>
+    public class GetPlayerByUsernameQuery : QueryBase<PlayerDto>
     {
         public string Username { get; set; }
     }
 
-    public class GetPlayerByPhoneQuery : BaseQuery<PlayerDto>
+    public class GetPlayerByPhoneQuery : QueryBase<PlayerDto>
     {
         public string Phone { get; set; }
     }

@@ -3,6 +3,8 @@ using Shared.Utils.Repositories;
 using IGrove.Domain.Configs; 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using IGrove.Management.Games.Repositories;
+using IGrove.Domain.Games.Repositories;
 
 namespace IGrove.Management
 {
@@ -25,10 +27,12 @@ namespace IGrove.Management
 
         public static IServiceCollection AddTimeZoneServices(this IServiceCollection services, IConfiguration configuration)
         {
+            var gameRepo = new GameRepository();
+
             return services.AddSingleton<IUserReadRepository, UserReadRepository>()
                            .AddSingleton<IUserWriteRepository, UserWriteRepository>()
-                           .AddSingleton<ITimeZoneWriteRepository, TimeZoneWriteRepository>()
-                           .AddSingleton<ITimeZoneReadRepository, TimeZoneReadRepository>();
+                           .AddSingleton<IGameReadRepository>(gameRepo)
+                           .AddSingleton<IGameWriteRepository>(gameRepo);
         }
     }
 }

@@ -7,9 +7,7 @@
   <ItemGroup>
     <Folder Include="Games\Commands\" />
     <Folder Include="Games\Dtos\" />
-    <Folder Include="Games\Entities\" />
     <Folder Include="Games\Events\" />
-    <Folder Include="Games\Queries\" />
     <Folder Include="Players\Events\" />
     <Folder Include="Tickets\Commands\" />
     <Folder Include="Tickets\Entities\" />

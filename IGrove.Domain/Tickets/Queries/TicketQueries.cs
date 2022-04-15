@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace IGrove.Domain.Tickets.Queries
 {
-    public class GetTicketsQuery : BaseQuery<IEnumerable<TicketDto>>
+    public class GetTicketsQuery : QueryBase<IEnumerable<TicketDto>>
     {
 
     }
 
-    public class GetTicketByIdQuery : BaseQuery<TicketDto>
+    public class GetTicketByIdQuery : QueryBase<TicketDto>
     {
         public Guid Id { get; set; }
     }

@@ -2,7 +2,7 @@
 
 namespace Shared.Utils.Queries
 {
-    public class BaseQuery<TResponse> : IQuery<TResponse>
+    public class QueryBase<TResponse> : IQuery<TResponse>
     {
 
     }
