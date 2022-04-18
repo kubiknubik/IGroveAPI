@@ -1,4 +1,5 @@
-﻿using IGrove.Domain.Games.Queries;
+﻿using IGrove.Domain.Games.Commands;
+using IGrove.Domain.Games.Queries;
 using IGroveAPI.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Utils.Commands.Abstract;
@@ -29,15 +30,38 @@ namespace IGroveAPI.Controllers
             return Ok(result);
         }
 
-        
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
         {
-            var query = new GetAllGameQuery();    
+            var query = new GetAllGameQuery();
 
             var result = await _queryBus.SendAsync(query, cancellationToken);
 
             return Ok(result);
+        }
+
+        [HttpPost("add")]
+        public async Task<IActionResult> Add(AddGameCommand command, CancellationToken cancellationToken)
+        {
+            await _commandBus.SendAsync(command, cancellationToken);
+
+            return Ok();
+        }
+
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete(DeleteGameCommand command, CancellationToken cancellationToken)
+        {
+            await _commandBus.SendAsync(command, cancellationToken);
+
+            return Ok();
+        }
+
+        [HttpPost("update")]
+        public async Task<IActionResult> Update(UpdateGameCommand command, CancellationToken cancellationToken)
+        {
+            await _commandBus.SendAsync(command, cancellationToken);
+
+            return Ok();
         }
     }
 }

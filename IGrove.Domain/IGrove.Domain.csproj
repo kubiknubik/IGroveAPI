@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Games\Commands\" />
     <Folder Include="Games\Events\" />
     <Folder Include="Players\Events\" />
     <Folder Include="Tickets\Commands\" />

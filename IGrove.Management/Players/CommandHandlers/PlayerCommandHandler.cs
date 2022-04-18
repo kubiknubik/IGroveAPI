@@ -44,10 +44,10 @@ namespace IGrove.Management.Players.CommandHandlers
 
             if (game == null)
             {
-                throw new BusinessRuleValidationException(InternalExceptionCode.IncorrectGame);
+                throw new BusinessRuleValidationException(InternalExceptionCode.GameDoesntExist);
             }
 
-            if (request.RoundId < 1 || game.LevelCount < request.RoundId)
+            if (request.RoundId < 1 || game.RoundCount < request.RoundId)
             {
                 throw new BusinessRuleValidationException(InternalExceptionCode.IncorrectRound);
             }

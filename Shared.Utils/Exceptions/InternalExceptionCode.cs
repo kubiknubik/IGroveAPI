@@ -7,7 +7,8 @@
         UserDoesntExist = 3,
         CantModifyAdminUserInfo = 4,
 
-        IncorrectGame,
+        GameDoesntExist,
         IncorrectRound, 
+        GameAlreadyExists
     }
 }

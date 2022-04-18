@@ -25,7 +25,7 @@ namespace IGroveAPI.Controllers
 
             var token = GenerateToken(result);
 
-            return Ok(token);
+            return Ok(new { token, result });
         }
     }
 }

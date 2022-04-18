@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Games\CommandHandlers\" />
     <Folder Include="Games\EventHandlers\" />
     <Folder Include="Players\EventHandlers\" />
     <Folder Include="Players\Repositories\Abstract\" />

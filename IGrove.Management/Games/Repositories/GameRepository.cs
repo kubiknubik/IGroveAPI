@@ -14,7 +14,7 @@ namespace IGrove.Management.Games.Repositories
                             Id = 1,
                             Description ="Mario is platformer game",
                             Name = "Mario",
-                            LevelCount = 47,
+                            RoundCount = 47,
                             CoverUrl ="1_cover.png",
                             IconUrl ="1_icon.png",
                             Version =1
@@ -23,7 +23,7 @@ namespace IGrove.Management.Games.Repositories
                             Id = 2,
                             Description ="Tetris is platformer game",
                             Name = "Tetris",
-                            LevelCount = 23,
+                            RoundCount = 23,
                             CoverUrl ="2_cover.png",
                             IconUrl ="2_icon.png",
                             Version =2
@@ -32,7 +32,7 @@ namespace IGrove.Management.Games.Repositories
                             Id = 3,
                             Description ="Subway Surfer is infinity runner",
                             Name = "Subway Surfer",
-                            LevelCount = 1,
+                            RoundCount = 1,
                             CoverUrl ="3_cover.png",
                             IconUrl ="3_icon.png",
                             Version =4

@@ -8,7 +8,7 @@
 
         public string Description { get; set; }
 
-        public int LevelCount { get; set; }
+        public int RoundCount { get; set; }
 
         public string IconUrl { get; set; }
 
