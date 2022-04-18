@@ -5,6 +5,9 @@
         IncorrectUsernameOrPassword = 1,
         UsernameAlreadyExists = 2,
         UserDoesntExist = 3,
-        CantModifyAdminUserInfo = 4
+        CantModifyAdminUserInfo = 4,
+
+        IncorrectGame,
+        IncorrectRound, 
     }
 }

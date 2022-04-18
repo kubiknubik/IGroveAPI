@@ -1,4 +1,5 @@
-﻿using IGrove.Domain.Players.Dtos;
+﻿using IGrove.Domain.Players.Commands;
+using IGrove.Domain.Players.Dtos;
 using IGrove.Domain.Players.Queries;
 using IGroveAPI.Controllers.Base;
 using Microsoft.AspNetCore.Authorization;
@@ -28,6 +29,16 @@ namespace IGroveAPI.Controllers
             };
 
             var result = await _queryBus.SendAsync(query, cancellationToken);
+
+            return Ok(result);
+        }
+
+        [HttpPost("gameRecord")]
+        public async Task<IActionResult> GameRecord(GamePlayedCommand gamePlayed, CancellationToken cancellationToken)
+        {
+            gamePlayed.PlayerId = CurrentUser.Id;
+
+             var result = await _commandBus.SendAsync(gamePlayed, cancellationToken);
 
             return Ok(result);
         }

@@ -1,5 +1,6 @@
 ﻿using Shared.Utils.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace IGrove.Domain.Players.Entities
 {
@@ -17,6 +18,8 @@ namespace IGrove.Domain.Players.Entities
 
         public DateTime LastUpdateDate { get; set; }
 
-        public int DailyGeneratedCoin { get; set; }
+        public int AvailableCoin { get; set; }
+
+        public List<GameRecord> GameRecords { get; set; } = new List<GameRecord>();
     }
 }

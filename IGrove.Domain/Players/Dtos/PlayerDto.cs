@@ -16,6 +16,6 @@ namespace IGrove.Domain.Players.Dtos
 
         public DateTime LastUpdateDate { get; set; }
 
-        public int DailyGeneratedCoin { get; set; }
+        public int AvailableCoin { get; set; }
     }
 }

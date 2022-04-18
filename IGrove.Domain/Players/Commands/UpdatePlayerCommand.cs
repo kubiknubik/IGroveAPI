@@ -6,4 +6,15 @@ namespace IGrove.Domain.Players.Commands
     {
 
     }
+
+    public class GamePlayedCommand : CommandBase<object>
+    {
+        public int GameId { get; set; }
+
+        public int PlayerId { get; set; }
+
+        public int RoundId { get; set; }
+
+        public int Point { get; set; }
+    }
 }

@@ -29,7 +29,7 @@ namespace IGrove.Management.Users.QueryHandlers
 
             if (result == null || result.Passord != request.Password.HashPassword(username))
             {
-                throw new BusinessRuleValidationException(InternalExceptionCode.UserDoesntExist);
+                throw new BusinessRuleValidationException(InternalExceptionCode.IncorrectUsernameOrPassword);
             }
 
             return _mapper.Map<UserDto>(result);

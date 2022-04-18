@@ -15,9 +15,9 @@ namespace IGrove.Management.Players.Repositories
             {
                 Id = 1,
                 AvatarUrl = "avatar.png",
-                DailyGeneratedCoin = 0,
-                GoldCoin = 140,
-                SilverCoin = 1000,
+                AvailableCoin = 200,
+                GoldCoin = 0,
+                SilverCoin = 0,
                 LastUpdateDate = DateTime.Now,
                 Username = "joni777"
             }) ;
