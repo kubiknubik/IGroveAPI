@@ -20,7 +20,7 @@ namespace IGrove.Management.Games.QueryHandlers
 
         public Task<Game> Handle(GetGameByIdQuery request, CancellationToken cancellationToken)
         {
-            return _gameReadRepository.GetGameById(request.Id, cancellationToken);
+            return _gameReadRepository.GetById(request.Id, cancellationToken);
         }
 
         public Task<IEnumerable<Game>> Handle(GetAllGameQuery request, CancellationToken cancellationToken)

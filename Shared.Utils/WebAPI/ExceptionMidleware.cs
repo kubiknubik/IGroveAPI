@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Shared.Utils.Exceptions;
+using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace Shared.Utils.WebAPI
 
                 var result = JsonSerializer.Serialize(ex.ResponseModel);
                 await response.WriteAsync(result);
+
             }
         }
     }

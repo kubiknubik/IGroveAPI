@@ -1,4 +1,5 @@
 ﻿using IGrove.Domain.Tickets.Dtos;
+using IGrove.Domain.Tickets.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -8,17 +9,17 @@ namespace IGrove.Domain.Tickets.Repositories
 {
     public interface ITicketReadRepository
     {
-        Task<IEnumerable<TicketDto>> GetAll(CancellationToken cancellationToken);
+        Task<IEnumerable<Ticket>> GetAll(CancellationToken cancellationToken);
 
-        Task<TicketDto> GetById(Guid id, CancellationToken cancellationToken);
+        Task<Ticket> GetById(Guid id, CancellationToken cancellationToken);
     }
 
     public interface ITicketWriteRepository
     {
-        Task Add(TicketDto ticket, CancellationToken cancellationToken);
+        Task Add(Ticket ticket, CancellationToken cancellationToken);
 
-        Task Update(TicketDto ticket, CancellationToken cancellationToken);
+        Task Update(Ticket ticket, CancellationToken cancellationToken);
 
-        Task Delete(TicketDto ticket, CancellationToken cancellationToken);
+        Task Remove(Ticket ticket, CancellationToken cancellationToken);
     }
 }

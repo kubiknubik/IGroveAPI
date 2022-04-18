@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 namespace IGrove.Management.Players.QueryHandlers
 {
     public class PlayerQueryHandler : IQueryHandler<GetPlayerByIdQuery, PlayerDto>,
-         IQueryHandler<GetPlayerByPhoneQuery, PlayerDto>,
          IQueryHandler<GetPlayerByUsernameQuery, PlayerDto>
     {
         private readonly IPlayerReadRepository _playerReadRepository;
@@ -24,13 +23,6 @@ namespace IGrove.Management.Players.QueryHandlers
         public async Task<PlayerDto> Handle(GetPlayerByIdQuery request, CancellationToken cancellationToken)
         {
             var result = await _playerReadRepository.GetById(request.Id, cancellationToken);
-
-            return _mapper.Map<PlayerDto>(result);
-        }
-
-        public async Task<PlayerDto> Handle(GetPlayerByPhoneQuery request, CancellationToken cancellationToken)
-        {
-            var result = await _playerReadRepository.GetByPhone(request.Phone, cancellationToken);
 
             return _mapper.Map<PlayerDto>(result);
         }

@@ -27,7 +27,7 @@ namespace IGroveAPI.Controllers
                 Id = guid
             };
 
-            var result = await _queryBus.SendAsync<GetTicketByIdQuery, TicketDto>(query, cancellationToken);
+            var result = await _queryBus.SendAsync(query, cancellationToken);
 
             return Ok(result);
         }
@@ -37,7 +37,7 @@ namespace IGroveAPI.Controllers
         {
             var query = new GetTicketsQuery();
 
-            var result = await _queryBus.SendAsync<GetTicketsQuery, IEnumerable<TicketDto>>(query, cancellationToken);
+            var result = await _queryBus.SendAsync(query, cancellationToken);
 
             return Ok(result);
         }

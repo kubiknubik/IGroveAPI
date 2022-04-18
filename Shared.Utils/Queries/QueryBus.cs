@@ -15,12 +15,12 @@ namespace Shared.Utils.Queries
             _mediatR = mediatR ?? throw new ArgumentNullException(nameof(mediatR));
         }
 
-        public async Task<TResponse> SendAsync<IQuery, TResponse>(IQuery<TResponse> request, CancellationToken cancellationToken)
+        public async Task<TResponse> SendAsync<TResponse>(IQuery<TResponse> request, CancellationToken cancellationToken)
         {
-            return await Send<IQuery, TResponse>(request, cancellationToken);
+            return await Send<TResponse>(request, cancellationToken);
         }
 
-        public Task<TResponse> Send<IQuery, TResponse>(IQuery<TResponse> request, CancellationToken cancellationToken)
+        public Task<TResponse> Send<TResponse>(IQuery<TResponse> request, CancellationToken cancellationToken)
         {
             return  _mediatR.Send(request, cancellationToken);
         }

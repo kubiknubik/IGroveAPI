@@ -1,16 +1,16 @@
-﻿using IGrove.Domain.Tickets.Dtos;
+﻿using IGrove.Domain.Tickets.Entities;
 using Shared.Utils.Queries;
 using System;
 using System.Collections.Generic;
 
 namespace IGrove.Domain.Tickets.Queries
 {
-    public class GetTicketsQuery : QueryBase<IEnumerable<TicketDto>>
+    public class GetTicketsQuery : QueryBase<IEnumerable<Ticket>>
     {
 
     }
 
-    public class GetTicketByIdQuery : QueryBase<TicketDto>
+    public class GetTicketByIdQuery : QueryBase<Ticket>
     {
         public Guid Id { get; set; }
     }

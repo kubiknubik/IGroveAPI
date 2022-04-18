@@ -6,11 +6,11 @@ namespace IGrove.Domain.Users.Repositories
 {
     public interface IUserReadRepository
     {
-        Task<User> GetUserById(int id, CancellationToken cancellationToken);
+        Task<User> GetById(long id, CancellationToken cancellationToken);
 
-        Task<User> GetUserByName(string name, CancellationToken cancellationToken);
+        Task<User> GetByName(string name, CancellationToken cancellationToken);
 
-        Task<User> GetUserByPhone(string phone, CancellationToken cancellationToken);
+        Task<User> GetByPhone(string phone, CancellationToken cancellationToken);
     }
 
     public interface IUserWriteRepository
@@ -19,6 +19,6 @@ namespace IGrove.Domain.Users.Repositories
 
         Task Update(User user, CancellationToken cancellationToken);
 
-        Task Delete(User user, CancellationToken cancellationToken);
+        Task Remove(User user, CancellationToken cancellationToken);
     }
 }

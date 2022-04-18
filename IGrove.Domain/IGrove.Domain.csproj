@@ -6,15 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Games\Commands\" />
-    <Folder Include="Games\Dtos\" />
     <Folder Include="Games\Events\" />
     <Folder Include="Players\Events\" />
     <Folder Include="Tickets\Commands\" />
-    <Folder Include="Tickets\Entities\" />
     <Folder Include="Tickets\Events\" />
-    <Folder Include="Users\Dtos\" />
     <Folder Include="Users\Events\" />
-    <Folder Include="Users\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

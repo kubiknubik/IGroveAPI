@@ -1,19 +1,15 @@
 ﻿using IGrove.Domain.Games.Entities;
 using IGrove.Domain.Games.Repositories;
+using Shared.Utils.Repositories;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace IGrove.Management.Games.Repositories
 {
-    public class GameRepository : IGameReadRepository, IGameWriteRepository
-    {
-        private readonly List<Game> _games;
-
+    public class GameRepository : BaseListRepository<Game, int>, IGameReadRepository, IGameWriteRepository
+    { 
         public GameRepository()
         {
-            _games = new List<Game> { 
+            _data.AddRange(new List<Game> {
                 new Game{
                             Id = 1,
                             Description ="Mario is platformer game",
@@ -31,7 +27,7 @@ namespace IGrove.Management.Games.Repositories
                             CoverUrl ="2_cover.png",
                             IconUrl ="2_icon.png",
                             Version =2
-                        }, 
+                        },
                 new Game{
                             Id = 3,
                             Description ="Subway Surfer is infinity runner",
@@ -41,17 +37,7 @@ namespace IGrove.Management.Games.Repositories
                             IconUrl ="3_icon.png",
                             Version =4
                         }
-            };
-        }
-
-        public Task<IEnumerable<Game>> GetAll(CancellationToken cancellationToken)
-        {
-            return Task.FromResult(_games.AsEnumerable());
-        }
-
-        public Task<Game> GetGameById(int id, CancellationToken cancellationToken)
-        {
-            return Task.FromResult(_games.FirstOrDefault(e => e.Id == id));
+            });
         }
     }
 }

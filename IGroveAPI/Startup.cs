@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Shared.Utils;
+using Shared.Utils.WebAPI;
 using System.Security.Claims;
 
 namespace IGroveAPI
@@ -23,21 +23,18 @@ namespace IGroveAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
-            services.AddJwt<Startup>(Configuration)
-         .AddSwaggerAuthorize()
-         .AddDomain(Configuration)
-         .AddMessageBusses(Configuration)
-         .AddManagement(Configuration)
-         .AddAuthorization(options =>
-         {
-             options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Role, "Admin"));
-             options.AddPolicy("User", policy => policy.RequireClaim(ClaimTypes.Role, "User"));
-         });
-         services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "IGroveAPI", Version = "v1" });
-            });
+             services.AddControllers();
+             services.AddJwt<Startup>(Configuration)
+             .AddSwaggerAuthorize()
+             .AddDomain(Configuration)
+             .AddMessageBusses(Configuration)
+             .AddManagement(Configuration)
+             .AddAuthorization(options =>
+             {
+                 options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Role, "Admin"));
+                 options.AddPolicy("User", policy => policy.RequireClaim(ClaimTypes.Role, "User"));
+             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,8 +47,11 @@ namespace IGroveAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "IGroveAPI v1"));
             }
 
+
+            app.UseMiddleware<ExceptionMidleware>();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

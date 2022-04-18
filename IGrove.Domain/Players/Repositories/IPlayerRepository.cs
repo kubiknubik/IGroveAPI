@@ -9,14 +9,13 @@ namespace IGrove.Domain.Players.Repositories
     {
         Task Add(Player player, CancellationToken cancellationToken);
         Task Update(Player player, CancellationToken cancellationToken);
-        Task Delete(Player player, CancellationToken cancellationToken);
+        Task Remove(Player player, CancellationToken cancellationToken);
     }
 
     public interface IPlayerReadRepository
     {
         Task<Player> GetById(long id, CancellationToken cancellationToken);
-        Task<Player> GetByPhone(string phone, CancellationToken cancellationToken);
-        Task<Player> GetByUsername(string email, CancellationToken cancellationToken);
+        Task<Player> GetByUsername(string username, CancellationToken cancellationToken);
         Task<IEnumerable<Player>> GetAll(CancellationToken cancellationToken);
     }
 }

@@ -1,5 +1,7 @@
-﻿using IGrove.Domain.Users.Entities;
+﻿using IGrove.Domain.Users.Dtos;
+using IGrove.Domain.Users.Entities;
 using IGroveAPI.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Utils.Commands.Abstract;
 using Shared.Utils.Queries.Abstract;
@@ -46,13 +48,14 @@ namespace IGroveAPI.Controllers.Base
             };
         }
 
-        protected string GenerateToken(User user)
+        protected string GenerateToken(UserDto user,string role ="User")
         {
             var claims = new List<Claim>() {
             new Claim(CustomClaims.Id,$"{user.Id}"),
             new Claim(CustomClaims.Username,user.Username),
             new Claim(CustomClaims.FirstName,user.FirstName),
-            new Claim(CustomClaims.LastName,user.LastName), 
+            new Claim(CustomClaims.LastName,user.LastName),
+            new Claim(ClaimTypes.Role,role)
           };
 
             return _jwtHandler.Create(claims);

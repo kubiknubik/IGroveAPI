@@ -1,8 +1,6 @@
-﻿using Shared.Utils.Entities;
-
-namespace IGrove.Domain.Games.Entities
+﻿namespace IGrove.Domain.Games.Dtos
 {
-    public class Game : IEntityIdentifier<int>
+    public class GameDto
     {
         public int Id { get; set; }
 

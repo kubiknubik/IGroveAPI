@@ -1,8 +1,6 @@
-﻿using Shared.Utils.Entities;
-
-namespace IGrove.Domain.Users.Entities
+﻿namespace IGrove.Domain.Users.Dtos
 {
-    public class User : IEntityIdentifier<long>
+    public class UserDto
     {
         public long Id { get; set; }
 
@@ -11,8 +9,6 @@ namespace IGrove.Domain.Users.Entities
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-        public string Passord { get; set; }
 
         public string Email { get; set; }
 

@@ -12,9 +12,4 @@ namespace IGrove.Domain.Players.Queries
     {
         public string Username { get; set; }
     }
-
-    public class GetPlayerByPhoneQuery : QueryBase<PlayerDto>
-    {
-        public string Phone { get; set; }
-    }
 }
